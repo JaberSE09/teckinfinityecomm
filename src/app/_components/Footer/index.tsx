@@ -10,7 +10,6 @@ export async function Footer() {
 
   try {
     footer = await fetchFooter()
-  
   } catch (error) {}
 
   const navItems = footer?.navItems || []
