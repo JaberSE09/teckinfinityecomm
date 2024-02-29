@@ -34,8 +34,11 @@
 .icon {
   margin-bottom: 16px;
 }
-
-
+@media (prefers-color-scheme: dark) {
+  .inclusions {
+    filter: invert(1);
+  }
+}
 :global([data-theme='dark']) {
   .footer {
     background-color: var(--theme-elevation-50);
