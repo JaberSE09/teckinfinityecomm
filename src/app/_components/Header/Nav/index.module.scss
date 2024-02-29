@@ -18,3 +18,8 @@
   opacity: 0;
   visibility: hidden;
 }
+@media (prefers-color-scheme: dark) {
+  .nav{
+    filter: invert(1);
+  }
+}

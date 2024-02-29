@@ -27,7 +27,7 @@ export const HeaderNav: React.FC<{ header: HeaderType }> = ({ header }) => {
         .join(' ')}
     >
       {navItems.map(({ link }, i) => {
-        return <CMSLink key={i} {...link} appearance="none" />
+        return <CMSLink key={i} {...link} />
       })}
       {user && <Link href="/account">Account</Link>}
       {!user && (
@@ -39,7 +39,7 @@ export const HeaderNav: React.FC<{ header: HeaderType }> = ({ header }) => {
           onClick={() => (window.location.href = '/login')}
         />
       )}
-      {user && <CartLink />}
+      {user && <CartLink className='cart' />}
     </nav>
   )
 }
