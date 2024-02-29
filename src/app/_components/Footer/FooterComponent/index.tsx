@@ -21,7 +21,7 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
       <Gutter>
         <ul className={classes.inclusions}>
           {inclusions.map(inclusion => (
-            <li key={inclusion.title}>
+            <li className="inclusionsText" key={inclusion.title}>
               <Image
                 src={inclusion.icon}
                 alt={inclusion.title}
