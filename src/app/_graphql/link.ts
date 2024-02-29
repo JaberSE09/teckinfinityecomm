@@ -8,7 +8,11 @@ export const LINK_FIELDS = ({ disableAppearance, disableLabel }: Args = {}): str
   ${!disableAppearance ? 'appearance' : ''}
   type
   newTab
+  
   url
+  icon{
+    url
+  }
   reference {
     relationTo
     value {

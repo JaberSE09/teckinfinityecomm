@@ -9,7 +9,7 @@ const nextConfig = {
     domains: [
       'localhost',
       'https://teckinfinityecomm.payloadcms.app/',
-      process.env.NEXT_PUBLIC_SERVER_URL,
+      `${process.env.NEXT_PUBLIC_SERVER_URL} /media`,      
     ]
       .filter(Boolean)
       .map(url => url.replace(/https?:\/\//, '')),
