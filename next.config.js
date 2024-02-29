@@ -6,7 +6,11 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['localhost', process.env.NEXT_PUBLIC_SERVER_URL]
+    domains: [
+      'localhost',
+      'https://teckinfinityecomm.payloadcms.app/',
+      process.env.NEXT_PUBLIC_SERVER_URL,
+    ]
       .filter(Boolean)
       .map(url => url.replace(/https?:\/\//, '')),
   },
