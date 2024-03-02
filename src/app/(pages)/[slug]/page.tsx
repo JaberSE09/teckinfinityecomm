@@ -58,7 +58,9 @@ export default async function Page({ params: { slug = 'home' } }) {
   return (
     <React.Fragment>
       {slug === 'home' ? (
+        <section>
           <Hero {...hero} />
+        </section>
       ) : (
         <>
           <Hero {...hero} />
