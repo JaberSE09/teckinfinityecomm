@@ -32,7 +32,7 @@ export default async function CreateAccount() {
         </Link>
       </div>
 
-      <div className={classes.formWrapper, classes.welcome}>
+      <div className={(classes.formWrapper, classes.welcome)}>
         <div className={classes.formContainer}>
           <RenderParams className={classes.params} />
 

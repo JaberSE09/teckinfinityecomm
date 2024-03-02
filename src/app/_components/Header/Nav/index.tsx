@@ -39,7 +39,7 @@ export const HeaderNav: React.FC<{ header: HeaderType }> = ({ header }) => {
           onClick={() => (window.location.href = '/login')}
         />
       )}
-      {user && <CartLink className='cart' />}
+      {user && <CartLink className="cart" />}
     </nav>
   )
 }
