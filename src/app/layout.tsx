@@ -10,6 +10,8 @@ import { InitTheme } from './_providers/Theme/InitTheme'
 import { mergeOpenGraph } from './_utilities/mergeOpenGraph'
 
 import './_css/app.scss'
+
+import classes from './index.module.scss'
 const jost = Jost({
   subsets: ['latin'],
   weight: ['400', '700'],
@@ -23,7 +25,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
-      <body className={jost.variable}>
+      <body className={(jost.variable, classes.body)}>
         <Providers>
           <AdminBar />
           {/* @ts-expect-error */}

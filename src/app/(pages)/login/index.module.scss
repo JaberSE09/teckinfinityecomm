@@ -96,8 +96,3 @@
 .params {
   margin-top: var(--base);
 }
-@media (prefers-color-scheme: dark) {
-  .welcome{
-  filter: invert(1);
-}
-}
