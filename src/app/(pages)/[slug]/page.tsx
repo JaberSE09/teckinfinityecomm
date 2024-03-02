@@ -3,8 +3,7 @@ import { Metadata } from 'next'
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
 
-import Categories from '../../../payload/collections/Categories'
-import { Category, Page } from '../../../payload/payload-types'
+import { Category, Page as pageType } from '../../../payload/payload-types'
 import { staticHome } from '../../../payload/seed/home-static'
 import { fetchDoc } from '../../_api/fetchDoc'
 import { fetchDocs } from '../../_api/fetchDocs'
@@ -14,6 +13,8 @@ import { Hero } from '../../_components/Hero'
 import { generateMeta } from '../../_utilities/generateMeta'
 
 import classes from './index.module.scss'
+import Categories from '../../_components/Categories'
+import Promotion from '../../_components/Promotion'
 
 // Payload Cloud caches all files through Cloudflare, so we don't need Next.js to cache them as well
 // This means that we can turn off Next.js data caching and instead rely solely on the Cloudflare CDN
@@ -26,11 +27,11 @@ export const dynamic = 'force-dynamic'
 export default async function Page({ params: { slug = 'home' } }) {
   const { isEnabled: isDraftMode } = draftMode()
 
-  let page: Page | null = null
+  let page: pageType | null = null
   let categories: Category[] | null = null
 
   try {
-    page = await fetchDoc<Page>({
+    page = await fetchDoc<pageType>({
       collection: 'pages',
       slug,
       draft: isDraftMode,
@@ -54,12 +55,16 @@ export default async function Page({ params: { slug = 'home' } }) {
     return notFound()
   }
 
-  const { hero, layout } = page  
+  const { hero, layout } = page
   return (
     <React.Fragment>
       {slug === 'home' ? (
         <section>
           <Hero {...hero} />
+          <Gutter className={classes.home}>
+            <Categories categories={categories} />
+            <Promotion />
+          </Gutter>
         </section>
       ) : (
         <>

@@ -10,3 +10,10 @@
         gap: 60px;
     }
 }
+
+@media (prefers-color-scheme: dark) {
+    .categories{
+      filter: invert(1);
+    }
+  }
+  
