@@ -134,7 +134,7 @@ export interface Page {
         selectedDocs?:
           | {
               relationTo: 'products';
-              value: string | Product;
+              value: string | Product | null;
             }[]
           | null;
         populatedDocs?:
