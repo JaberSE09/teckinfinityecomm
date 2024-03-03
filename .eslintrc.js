@@ -12,5 +12,6 @@ module.exports = {
     ],
     'react/no-unescaped-entities': 'off',
     '@next/next/no-page-custom-font': 'off',
+    'no-trailing-spaces': 'error',
   },
 }
