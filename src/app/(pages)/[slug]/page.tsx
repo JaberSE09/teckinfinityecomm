@@ -94,7 +94,7 @@ export async function generateMetadata({ params: { slug = 'home' } }): Promise<M
   let page: pageType | null = null
 
   try {
-    page = await fetchDoc<Page>({
+    page = await fetchDoc<pageType>({
       collection: 'pages',
       slug,
       draft: isDraftMode,
