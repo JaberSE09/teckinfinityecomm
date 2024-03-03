@@ -9,7 +9,7 @@ import { Price } from '../Price'
 
 import classes from './index.module.scss'
 
-const priceFromJSON = (priceJSON): string => {
+const priceFromJSON = (priceJSON: string): string => {
   let price = ''
 
   if (priceJSON) {
