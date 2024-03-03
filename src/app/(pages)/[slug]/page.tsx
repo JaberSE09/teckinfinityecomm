@@ -8,13 +8,13 @@ import { staticHome } from '../../../payload/seed/home-static'
 import { fetchDoc } from '../../_api/fetchDoc'
 import { fetchDocs } from '../../_api/fetchDocs'
 import { Blocks } from '../../_components/Blocks'
+import Categories from '../../_components/Categories'
 import { Gutter } from '../../_components/Gutter'
 import { Hero } from '../../_components/Hero'
+import Promotion from '../../_components/Promotion'
 import { generateMeta } from '../../_utilities/generateMeta'
 
 import classes from './index.module.scss'
-import Categories from '../../_components/Categories'
-import Promotion from '../../_components/Promotion'
 
 // Payload Cloud caches all files through Cloudflare, so we don't need Next.js to cache them as well
 // This means that we can turn off Next.js data caching and instead rely solely on the Cloudflare CDN
@@ -81,7 +81,7 @@ export default async function Page({ params: { slug = 'home' } }) {
 
 export async function generateStaticParams() {
   try {
-    const pages = await fetchDocs<Page>('pages')
+    const pages = await fetchDocs<pageType>('pages')
     return pages?.map(({ slug }) => slug)
   } catch (error) {
     return []
@@ -91,7 +91,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params: { slug = 'home' } }): Promise<Metadata> {
   const { isEnabled: isDraftMode } = draftMode()
 
-  let page: Page | null = null
+  let page: pageType | null = null
 
   try {
     page = await fetchDoc<Page>({
