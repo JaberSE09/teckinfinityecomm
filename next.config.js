@@ -1,8 +1,6 @@
 /** @type {import('next').NextConfig} */
 const ContentSecurityPolicy = require('./csp')
 const redirects = require('./redirects')
-
-// next.config.js
 const path = require('path')
 const { withPayload } = require('@payloadcms/next-payload')
 

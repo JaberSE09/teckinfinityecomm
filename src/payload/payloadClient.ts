@@ -1,4 +1,6 @@
-import { Payload, getPayload } from "payload/dist/payload";
+import type { Payload } from 'payload/dist/payload'
+import { getPayload } from 'payload/dist/payload'
+
 import config from './payload.config';
 
 if (!process.env.PAYLOAD_SECRET) {
@@ -36,7 +38,7 @@ export const getPayloadClient = async (): Promise<Payload> => {
 
   try {
     cached.client = await cached.promise
-  } catch (e) {
+  } catch (e: unknown) {
     cached.promise = null
     throw e
   }
