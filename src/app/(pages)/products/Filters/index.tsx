@@ -30,7 +30,7 @@ const Filters = ({ categories }: { categories: Category[] }) => {
         <h6 className={classes.title}>Product Categories</h6>
         <div className={classes.categories}>
           {categories.map(category => {
-            const isSelected = categoryFilters.includes(category.id)            
+            const isSelected = categoryFilters.includes(category.id)
             return (
               <Checkbox
                 key={category.id}
